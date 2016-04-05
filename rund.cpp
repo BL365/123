@@ -12,26 +12,24 @@ class matr
         {
         	int *mass = new int [i];
         }
-        int method_rund()
-        	{
-        		srand(time(NULL));
-        		for (int z = 0; z < i; z++)
-        		{
+        int method_rund();
+        int get_matr ();
+        ~matr()
+        {
+                    delete *mass;
+                    delete j;
+                    delete i;
+        };
+};
 
-        		}							//не хватает задания рандомных элементов массива
-        	};
-        void get_matr ()						//метод вывода массива
+matr::get_matr ()						//метод вывода массива
         {
         	for (int c = 0; c < 3; c++)
         		{
+
         		cout<<mass[c];				//не хватает цикла для вывода второй строки
         		}
-        };
-        ~matr()
-        {
-                    delete								//не хватает цикла удаления элементов и массива
-        };
-};
+        }
 
 int main()
 {
