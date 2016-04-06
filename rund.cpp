@@ -3,38 +3,57 @@
 #include <ctime>
 using namespace std;
 
-int i=2, j=3;
-
 class matr
 {
-     public:
-        matr()
+	int i,j,c,d;
+		public:
+		matr(int I,int J)
         {
-        	int *mass = new int [i];
+    	   i = I;
+    	   j = J;
         }
-        int method_rund();
-        int get_matr ();
-        ~matr()
-        {
-                    delete *mass;
-                    delete j;
-                    delete i;
-        };
+
+       int method_rund();
+       int get_matr ();
+       int **mass = new int* [i];
+       for (c = 0; c < 3; c++)
+       {
+    	   m[c] = new int [5]
+       }
+       ~matr()
+			{
+				delete [] mass;
+				delete i;
+			}
 };
 
-matr::get_matr ()						//метод вывода массива
+int matr::get_matr ()						//метод вывода массива
         {
-        	for (int c = 0; c < 3; c++)
+        	for (c = 0; c < 2; c++)
         		{
-
-        		cout<<mass[c];				//не хватает цикла для вывода второй строки
+        			for (d = 0; d < 3; d++)
+        			{
+        				cout<< mass [c] [d];
+        			}
         		}
         }
+int matr::method_rund()
+{
+		srand(time(NULL));
+		for (int z = 0; z < i; z++)
+		{
+			for (int y = 0; y < j; y++)
+			{
+				mass [z] [y] = rand ();
+			}
+		}
+		return 0;
+};
 
 int main()
 {
-		matr Obj;										//здесь нужно создать объект класса matr, который вызовет функции класса по очереди
-		Obj,*mass[i][j];
+		matr Obj(2, 3);
+		Obj.method_rund();
 	return 0;
-}
+};
 
