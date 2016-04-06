@@ -30,12 +30,16 @@ class matr
 
 void matr::get_matr ()
 {
-	for (int a = 0; a < i; a++)
+	int a = 0;
+	while (a < i)
 	{
-		for (int b = 0; b < j; b++)
+		int b;
+		for (b = 0; b < j; b++)
 		{
-				cout << arr [a] [b] << endl;
+			cout << arr [a] [b] << " ";
 		}
+		cout << endl;
+		a++;
 	}
 }
 int matr::method_rand()
@@ -53,7 +57,7 @@ int matr::method_rand()
 
 int main()
 {
-matr Obj(2, 3);
+matr Obj(4, 3);
 Obj.method_rand();
 Obj.get_matr();
 return 0;
