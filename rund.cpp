@@ -49,7 +49,7 @@ int matr::method_rand()
 	{
 		for (int b = 0; b < j; b++)
 		{
-			arr [a] [b] = rand ();
+			arr [a] [b] = rand () % 5 +1;	//задание диапазона рандомных чисел от 1 до 5
 		}
 	}
 	return 0;
@@ -57,7 +57,7 @@ int matr::method_rand()
 
 int main()
 {
-matr Obj(4, 3);
+matr Obj(2, 3);
 Obj.method_rand();
 Obj.get_matr();
 return 0;
