@@ -19,7 +19,7 @@ class matr
 		}
 	}
 
-	int method_rand(int min_rand, int max_rand);
+	int method_rand(int & min_rand, int & max_rand);
 	void get_matr ();
 
 	~matr()
@@ -42,7 +42,7 @@ void matr::get_matr ()
 		a++;
 	}
 }
-int matr::method_rand (int min_rand, int max_rand)
+int matr::method_rand (int & min_rand, int & max_rand)
 {
 	int A = max_rand;
 	int B = min_rand;
