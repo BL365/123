@@ -19,7 +19,7 @@ class matr
 		}
 	}
 
-	int method_rand(int min_rand (int &), int max_rand (int &));
+	int method_rand(int min_rand, int max_rand);
 	void get_matr ();
 
 	~matr()
@@ -42,15 +42,16 @@ void matr::get_matr ()
 		a++;
 	}
 }
-int matr::method_rand (int min_rand (int &), int max_rand (int &))
+int matr::method_rand (int min_rand, int max_rand)
 {
-
+	int A = max_rand;
+	int B = min_rand;
 	srand(time(NULL));
 	for (int a = 0; a < i; a++)
 	{
 		for (int b = 0; b < j; b++)
 		{
-			arr [a] [b] = * min_rand + rand () %  * max_rand;
+			arr [a] [b] = rand () % A +B;
 		}
 	}
 	return 0;
@@ -58,14 +59,15 @@ int matr::method_rand (int min_rand (int &), int max_rand (int &))
 
 int main()
 {
-matr Obj(2, 3);
-int min_rand, max_rand;
-cout << "Введите минимальное значение рандома" << endl;
-cin >> min_rand;
-cout << "Введи максимальное значение рандома" << endl;
-cin << max_rand;
-Obj.method_rand(int & min_rand, int & max_rand);
-Obj.get_matr();
-return 0;
+	matr Obj(10, 10);
+	int min_rand, max_rand;
+	cout << "Введите минимальное значение рандома" << endl;
+	cin >> min_rand;
+	cout << "Введи максимальное значение рандома" << endl;
+	cin >> max_rand;
+	max_rand = max_rand - min_rand + 1;
+	Obj.method_rand(min_rand, max_rand);
+	Obj.get_matr();
+	return 0;
 }
 
