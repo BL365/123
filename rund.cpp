@@ -44,12 +44,16 @@ void matr::get_matr ()
 }
 int matr::method_rand()
 {
+	int min_rand, max_rand;
+	cout << "минимальное значение фунции рандом = , максимальное значение = " << endl;
+	cin >> min_rand;
+	cin >> max_rand;
 	srand(time(NULL));
 	for (int a = 0; a < i; a++)
 	{
 		for (int b = 0; b < j; b++)
 		{
-			arr [a] [b] = rand () % 5 +1;	//задание диапазона рандомных чисел от 1 до 5
+			arr [a] [b] = min_rand + rand () % max_rand;	//задание диапазона рандомных чисел от 1 до 5
 		}
 	}
 	return 0;
